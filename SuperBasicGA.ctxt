@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=SuperBasicGA
+comment0.text=\r\n\ I\ am\ trying\ to\ create\ a\ very\ basic\ GA\ to\ find\ Hello\ World\r\n\r\n\ Ian\ Goodwin\r\n\ 1/9/2018\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\r\n\ This\ method\ is\ meant\ to\ run\ the\ GA\ using\ all\ the\ other\ stuff\r\n
+numComments=2
