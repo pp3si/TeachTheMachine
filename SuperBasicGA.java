@@ -11,7 +11,9 @@ public class SuperBasicGA
      * This method is meant to run the GA using all the other stuff
      */
     public static void main(String [] args) {
-        
+        for(int i = 0; i < Population.popSize; i++) {
+            
+        }
     }
     public static int randInt(int min, int max) {
         double rand = Math.random();
