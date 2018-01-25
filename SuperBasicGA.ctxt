@@ -4,4 +4,6 @@ comment0.text=\r\n\ I\ am\ trying\ to\ create\ a\ very\ basic\ GA\ to\ find\ Hel
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment1.text=\r\n\ This\ method\ is\ meant\ to\ run\ the\ GA\ using\ all\ the\ other\ stuff\r\n
-numComments=2
+comment2.params=min\ max
+comment2.target=int\ randInt(int,\ int)
+numComments=3

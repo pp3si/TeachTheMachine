@@ -13,4 +13,10 @@ public class SuperBasicGA
     public static void main(String [] args) {
         
     }
+    public static int randInt(int min, int max) {
+        double rand = Math.random();
+        double rand2 = rand * (max - min + 1);
+        int result = (int)(rand2 + min);
+        return result;
+    }
 }

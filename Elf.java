@@ -3,15 +3,15 @@
  * An elf is the individual I'm using for my GA.
  *
  * Ian Goodwin
- * 1/9/2018
+ * 1/17/2018
  */
 public class Elf
 {
-    // instance variables - replace the example below with your own
     public boolean[] gene;
-    public int test;
     //We're just trying to match the object's genes to five trues - our ideal solution
+    public final double mutationRate = .05;
 
+    //can't set a matrix = to {stuff, stuff, stuff}; only in declaration
     /**
      * Constructor for objects of class Elf
      */
@@ -23,15 +23,20 @@ public class Elf
         }
         gene = temp;
     }
-
+    
     /**
      * This method assigns a fitness score to an Elf
      *
      * No parameters, just works with the stuff we know about the elf
-     * return    the fitness score for the Elf
+     * returns the fitness score for the Elf (max 5, min 0)
      */
     public int getFitness() {
         int sum = 0;
-        
+        for(int i = 0; i < gene.length; i++) {
+            if(gene[i]) {
+                sum++;
+            }
+        }
+        return sum;
     }
 }

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Elf
-comment0.text=\r\n\ An\ elf\ is\ the\ individual\ I'm\ using\ for\ my\ GA.\r\n\r\n\ Ian\ Goodwin\r\n\ 1/9/2018\r\n
-comment1.params=
-comment1.target=Elf()
+comment0.text=\r\n\ An\ elf\ is\ the\ individual\ I'm\ using\ for\ my\ GA.\r\n\r\n\ Ian\ Goodwin\r\n\ 1/17/2018\r\n
+comment1.params=inputs
+comment1.target=Elf(boolean[])
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Elf\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\r\n\ This\ method\ assigns\ a\ fitness\ score\ to\ an\ Elf\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.params=
+comment2.target=int\ getFitness()
+comment2.text=\r\n\ This\ method\ assigns\ a\ fitness\ score\ to\ an\ Elf\r\n\r\n\ No\ parameters,\ just\ works\ with\ the\ stuff\ we\ know\ about\ the\ elf\r\n\ returns\ the\ fitness\ score\ for\ the\ Elf\ (max\ 5,\ min\ 0)\r\n
 numComments=3
