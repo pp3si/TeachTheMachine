@@ -7,4 +7,6 @@ comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Population\r\n
 comment2.params=
 comment2.target=Elf[]\ chooseBreeders()
 comment2.text=\r\n\ Chooses\ 10\ random\ pairs\ of\ Elves\ in\ the\ population,\ takes\ the\ more\ fit\ of\ each,\ and\r\n\ returns\ them\ as\ the\ breeding\ pool\ (allows\ an\ individual\ Elf\ to\ be\ in\ there\ more\ than\ once)\r\n
-numComments=3
+comment3.params=parent1\ parent2
+comment3.target=Elf\ crossover(Elf,\ Elf)
+numComments=4

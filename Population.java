@@ -60,8 +60,17 @@ public class Population
             } else {
                 newGene[i] = parent2.gene[i];
             }
-            
+            double rand = Math.random();
+            if(rand <= .05) {//to see if the gene will mutate to a random bit
+                coinFlip = SuperBasicGA.randInt(1,2);
+                if(coinFlip == 1) {
+                    newGene[i] = false;
+                } else {
+                    newGene[i] = true;
+                }
+            }
         }
+        return new Elf(newGene);
     }
     public Elf[] indivs;
     public final int popSize = 20;
