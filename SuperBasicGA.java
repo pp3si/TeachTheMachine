@@ -1,4 +1,3 @@
-
 /**
  * I am trying to create a very basic GA to find Hello World
  *
@@ -11,8 +10,19 @@ public class SuperBasicGA
      * This method is meant to run the GA using all the other stuff
      */
     public static void main(String [] args) {
-        for(int i = 0; i < Population.popSize; i++) {
-            
+        Elf[] collection = new Elf[Population.popSize];
+        int index = 0;
+        for(int i = 0; i < Population.popSize; i++) {//Generate initial population with random genes
+            boolean[] genome = new boolean[5];
+            for(int j = 0; j < 5; j++) {
+                int geneBit = randInt(0,1);
+                if(geneBit == 0) {
+                    genome[i] = false;
+                } else {
+                    genome[i] = true;
+                }
+            }
+            collection[index++] = new Elf(genome);
         }
     }
     public static int randInt(int min, int max) {

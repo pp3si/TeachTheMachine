@@ -18,7 +18,6 @@ public class Population
         }
         indivs = temp;
     }
-
     /**
      * Chooses 10 random pairs of Elves in the population, takes the more fit of each, and
      * returns them as the breeding pool (allows an individual Elf to be in there more than once)
@@ -92,5 +91,4 @@ public class Population
     }
     public Elf[] indivs;
     public static final int popSize = 20;
-    
 }
