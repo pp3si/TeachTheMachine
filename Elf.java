@@ -8,8 +8,8 @@ public class Elf
 {
     public boolean[] gene;
     //We're just trying to match the object's genes to five trues - our ideal solution
-    public final double mutationRate = .05;
-
+    public static final double mutationRate = .05;
+    public static
     //can't set a matrix = to {stuff, stuff, stuff}; only in declaration
     /**
      * Constructor for objects of class Elf
