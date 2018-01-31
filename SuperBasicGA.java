@@ -17,9 +17,9 @@ public class SuperBasicGA
             for(int j = 0; j < 5; j++) {
                 int geneBit = randInt(0,1);
                 if(geneBit == 0) {
-                    genome[i] = false;
+                    genome[j] = false;
                 } else {
-                    genome[i] = true;
+                    genome[j] = true;
                 }
             }
             collection[index++] = new Elf(genome);
@@ -28,16 +28,31 @@ public class SuperBasicGA
         int bestEverFitness = initial.greatestFitness();
         Population mostRecentGen;
         mostRecentGen = initial;
-        while(bestEverFitness != 
-        Elf[] generation1Elves = new Elf[Population.popSize];
-        for(int i = 0; i < Population.popSize; i++) {
-            int parent1Index = randInt(0, initialBreeders.length);
-            int parent2Index = randInt(0, initialBreeders.length);
-            Elf parentOne = initial.indivs[parent1Index];
-            Elf parentTwo = initial.indivs[parent2Index];
-            generation1Elves[i] = Population.crossover(parentOne, parentTwo);
+        Elf[] nextGenElves = new Elf[Population.popSize];
+        int numGenerations = 1;
+        System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
+        System.out.println(mostRecentGen.greatestFitness());
+        while(bestEverFitness < Elf.maxFitness) {
+            Elf[] breeders = mostRecentGen.chooseBreeders();
+            for(int i = 0; i < Population.popSize; i++) {
+                int parent1Index = randInt(0, breeders.length - 1);
+                int parent2Index = randInt(0, breeders.length - 1);
+                Elf parentOne = breeders[parent1Index];
+                Elf parentTwo = breeders[parent2Index];
+                nextGenElves[i] = Population.crossover(parentOne, parentTwo);
+            }
+            Population nextGen = new Population(nextGenElves);
+            if(nextGen.greatestFitness() > bestEverFitness) {
+                bestEverFitness = nextGen.greatestFitness();
+            }
+            mostRecentGen = nextGen;
+            numGenerations++;
+            System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
+            System.out.println(mostRecentGen.greatestFitness());
+            System.out.print("That individual's genes were ");
+            mostRecentGen.bestIndiv().display();
         }
-        Population gen1 = new Population(generation1Elves);
+        System.out.println("Generations required to achieve max fitness: " + numGenerations);
     }
     public static int randInt(int min, int max) {
         double rand = Math.random();

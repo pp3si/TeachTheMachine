@@ -30,8 +30,8 @@ public class Population
             int in2 = -1;
             //If they don't get change, it won't work
             while(in1 == in2) {
-                in1 = SuperBasicGA.randInt(0,19);
-                in2 = SuperBasicGA.randInt(0,19);
+                in1 = SuperBasicGA.randInt(0, Population.popSize - 1);
+                in2 = SuperBasicGA.randInt(0, Population.popSize - 1);
                 //We won't choose between the same Elf, so we ensure they're different
                 //By random-picking an index for each until they're not the same
             }
@@ -88,6 +88,15 @@ public class Population
             }
         }
         return max;
+    }
+    public Elf bestIndiv() {
+        for(int i = 0; i < popSize; i++) {
+             if(indivs[i].getFitness() == greatestFitness()) {
+                 return indivs[i];
+             }
+        }
+        System.out.println("bestIndiv gave an error");
+        return indivs[0];
     }
     public Elf[] indivs;
     public static final int popSize = 20;

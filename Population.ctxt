@@ -11,4 +11,6 @@ comment3.params=parent1\ parent2
 comment3.target=Elf\ crossover(Elf,\ Elf)
 comment4.params=
 comment4.target=int\ greatestFitness()
-numComments=5
+comment5.params=
+comment5.target=Elf\ bestIndiv()
+numComments=6

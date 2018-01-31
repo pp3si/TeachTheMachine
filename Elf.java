@@ -9,7 +9,7 @@ public class Elf
     public boolean[] gene;
     //We're just trying to match the object's genes to five trues - our ideal solution
     public static final double mutationRate = .05;
-    public static
+    public static final int maxFitness = 5;
     //can't set a matrix = to {stuff, stuff, stuff}; only in declaration
     /**
      * Constructor for objects of class Elf
@@ -37,5 +37,11 @@ public class Elf
             }
         }
         return sum;
+    }
+    public void display() {
+        for(int i = 0; i < maxFitness; i++) {
+            System.out.print(gene[i] + " ");
+        }
+        System.out.println("");
     }
 }
