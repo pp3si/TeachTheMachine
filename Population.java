@@ -56,7 +56,7 @@ public class Population
     }
     public static Elf crossover(Elf parent1, Elf parent2) {
         //Takes two parents (selected randomly from the breeding pool) and creates a child
-        boolean[] newGene = new boolean[5];
+        boolean[] newGene = new boolean[Elf.maxFitness];
         for(int i = 0; i < newGene.length; i++) {
             int coinFlip = SuperBasicGA.randInt(1,2);
             if(coinFlip == 1) {
@@ -99,5 +99,5 @@ public class Population
         return indivs[0];
     }
     public Elf[] indivs;
-    public static final int popSize = 20;
+    public static final int popSize = 2000;
 }

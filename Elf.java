@@ -9,7 +9,7 @@ public class Elf
     public boolean[] gene;
     //We're just trying to match the object's genes to five trues - our ideal solution
     public static final double mutationRate = .05;
-    public static final int maxFitness = 5;
+    public static final int maxFitness = 100;
     //can't set a matrix = to {stuff, stuff, stuff}; only in declaration
     /**
      * Constructor for objects of class Elf
@@ -27,7 +27,7 @@ public class Elf
      * This method assigns a fitness score to an Elf
      *
      * No parameters, just works with the stuff we know about the elf
-     * returns the fitness score for the Elf (max 5, min 0)
+     * returns the fitness score for the Elf (max is # booleans controlled by maxFitness, min 0)
      */
     public int getFitness() {
         int sum = 0;

@@ -13,8 +13,8 @@ public class SuperBasicGA
         Elf[] collection = new Elf[Population.popSize];
         int index = 0;
         for(int i = 0; i < Population.popSize; i++) {//Generate initial population with random genes
-            boolean[] genome = new boolean[5];
-            for(int j = 0; j < 5; j++) {
+            boolean[] genome = new boolean[Elf.maxFitness];
+            for(int j = 0; j < Elf.maxFitness; j++) {
                 int geneBit = randInt(0,1);
                 if(geneBit == 0) {
                     genome[j] = false;
@@ -30,8 +30,10 @@ public class SuperBasicGA
         mostRecentGen = initial;
         Elf[] nextGenElves = new Elf[Population.popSize];
         int numGenerations = 1;
-        System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
+        /*("Generation " + numGenerations + ": Best individual has fitness ");
         System.out.println(mostRecentGen.greatestFitness());
+        System.out.print("That individual's genes were ");
+        mostRecentGen.bestIndiv().display();*/
         while(bestEverFitness < Elf.maxFitness) {
             Elf[] breeders = mostRecentGen.chooseBreeders();
             for(int i = 0; i < Population.popSize; i++) {
@@ -42,15 +44,17 @@ public class SuperBasicGA
                 nextGenElves[i] = Population.crossover(parentOne, parentTwo);
             }
             Population nextGen = new Population(nextGenElves);
+            numGenerations++;
             if(nextGen.greatestFitness() > bestEverFitness) {
                 bestEverFitness = nextGen.greatestFitness();
+                System.out.print("New best ever fitness is "+bestEverFitness);
+                System.out.println(" in generation "+numGenerations);
             }
             mostRecentGen = nextGen;
-            numGenerations++;
-            System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
+            /*System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
             System.out.println(mostRecentGen.greatestFitness());
             System.out.print("That individual's genes were ");
-            mostRecentGen.bestIndiv().display();
+            mostRecentGen.bestIndiv().display();*/
         }
         System.out.println("Generations required to achieve max fitness: " + numGenerations);
     }
