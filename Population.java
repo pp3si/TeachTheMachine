@@ -99,5 +99,5 @@ public class Population
         return indivs[0];
     }
     public Elf[] indivs;
-    public static final int popSize = 2000;
+    public static final int popSize = 3500;
 }

@@ -26,6 +26,7 @@ public class SuperBasicGA
         }
         Population initial = new Population(collection);
         int bestEverFitness = initial.greatestFitness();
+        System.out.println("Initial best fitness: "+bestEverFitness);
         Population mostRecentGen;
         mostRecentGen = initial;
         Elf[] nextGenElves = new Elf[Population.popSize];
@@ -45,10 +46,14 @@ public class SuperBasicGA
             }
             Population nextGen = new Population(nextGenElves);
             numGenerations++;
+            if(numGenerations % 1000 == 0) {
+                System.out.print(numGenerations + " generations reached, fitness is ");
+                System.out.println(mostRecentGen.greatestFitness());
+            }
             if(nextGen.greatestFitness() > bestEverFitness) {
                 bestEverFitness = nextGen.greatestFitness();
-                System.out.print("New best ever fitness is "+bestEverFitness);
-                System.out.println(" in generation "+numGenerations);
+                System.out.print("Fitness "+bestEverFitness);
+                System.out.println(" acheived in generation "+numGenerations);
             }
             mostRecentGen = nextGen;
             /*System.out.print("Generation " + numGenerations + ": Best individual has fitness ");
