@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Color
+comment0.text=\r\n\ \r\n\ An\ attempt\ to\ make\ hex\ color\ codes\ a\ vector\ space\ for\ easy\ computation\ of\ distance.\ (int\ mult\ only)\r\n\ \r\n\ Ian\ Goodwin\r\n\ 2/6/2018\r\n\ \r\n
+comment1.params=ref
+comment1.target=Color(int[])
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Color\r\n
+comment2.params=a\ b\ c\ d\ e\ f
+comment2.target=Color(int,\ int,\ int,\ int,\ int,\ int)
+comment3.params=A\ B
+comment3.target=Color\ add(Color,\ Color)
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment4.params=A\ k
+comment4.target=Color\ multiply(Color,\ int)
+comment5.params=A\ B
+comment5.target=boolean\ equals(Color,\ Color)
+comment6.params=
+comment6.target=void\ print()
+comment7.params=A\ B
+comment7.target=double\ distance(Color,\ Color)
+comment7.text=public\ static\ int\ innerProduct(Color\ A,\ Color\ B)\ {\r\n\ \ \ \ \ \ \ \ int\ sum\ \=\ 0;\r\n\ \ \ \ \ \ \ \ Color\ Temp\ \=\ add(A,\ B);\r\n\ \ \ \ \ \ \ \ for(int\ i\ \=\ 0;\ i\ <\ 6;\ i++)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ sum\ +\=\ (Temp.code[i]);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ sum;\r\n}
+comment8.params=
+comment8.target=void\ testDistance()
+comment9.params=
+comment9.target=boolean\ testAxioms()
+comment9.text=public\ static\ boolean\ testInnerProduct()\ {\r\n\ \ \ \ \ \ \ \ int[]\ blarg\ \=\ {2,\ 12,\ 9,\ 3,\ 11,\ 0};\r\n\ \ \ \ \ \ \ \ Color\ testA\ \=\ new\ Color(blarg);\r\n\ \ \ \ \ \ \ \ int[]\ yarg\ \=\ {13,\ 5,\ 5,\ 3,\ 8,\ 4};\r\n\ \ \ \ \ \ \ \ Color\ testB\ \=\ new\ Color(yarg);\r\n\ \ \ \ \ \ \ \ int[]\ flarg\ \=\ {7,\ 14,\ 15,\ 6,\ 12,\ 11};\r\n\ \ \ \ \ \ \ \ Color\ testC\ \=\ new\ Color(flarg);\r\n\ \ \ \ \ \ \ \ int[]\ zero\ \=\ {0,\ 0,\ 0,\ 0,\ 0,\ 0};\r\n\ \ \ \ \ \ \ \ final\ Color\ ZERO\ \=\ new\ Color(zero);\r\n\ \ \ \ \ \ \ \ int\ Test\ \=\ innerProduct(testB,\ testC);\r\n\ \ \ \ \ \ \ \ int\ Test2\ \=\ innerProduct(testC,\ testB);\r\n\ \ \ \ \ \ \ \ if(Test\ \!\=\ Test2)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Fails\ symmetry");\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ false;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ testA.print();\r\n\ \ \ \ \ \ \ \ testB.print();\r\n\ \ \ \ \ \ \ \ add(testA,\ testB).print();\r\n\ \ \ \ \ \ \ \ Test\ \=\ innerProduct(add(testA,\ testB),\ testC);\r\n\ \ \ \ \ \ \ \ Test2\ \=\ innerProduct(testA,\ testC)\ +\ innerProduct(testB,\ testC);\r\n\ \ \ \ \ \ \ \ System.out.println(Test);\r\n\ \ \ \ \ \ \ \ System.out.println(Test2);\r\n\ \ \ \ \ \ \ \ if(Test\ \!\=\ Test2)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Fails\ additivity");\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ false;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ Test\ \=\ innerProduct(multiply(testC,\ 2),\ testB);\r\n\ \ \ \ \ \ \ \ Test2\ \=\ 2\ *\ innerProduct(testC,\ testB);\r\n\ \ \ \ \ \ \ \ if(Test\ \!\=\ Test2)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Fails\ homogeneity");\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ false;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ Test\ \=\ innerProduct(testA,\ testA);\r\n\ \ \ \ \ \ \ \ if(Test\ <\ 0)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ System.out.println("Fails\ positivity");\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ false;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ //Must\ verify\ second\ part\ on\ own\r\n\ \ \ \ \ \ \ \ return\ true;\r\n}
+numComments=10
